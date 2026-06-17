@@ -1,5 +1,18 @@
 # Service Toolkit for D365 Customer Service
 
+## Customer Release Hub (v1.2.2.0)
+
+Use the customer-facing engagement page for downloads and install guidance:
+
+- `index.html` (GitHub Pages landing page)
+- `release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip`
+- `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.pdf`
+- `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.docx`
+
+Recommended publish URL after push:
+
+- `https://billwhalenmsft.github.io/service-toolkit-for-d365-cs/`
+
 Custom entities and web resources that extend the Dynamics 365 Customer Service Workspace with manufacturing-specific service management capabilities.
 
 > **⚠️ IMPORTANT DISCLAIMER**
