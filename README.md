@@ -5,8 +5,9 @@
 Use the customer-facing engagement page for downloads and install guidance:
 
 - `index.html` (GitHub Pages landing page)
-- `release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip` — **unmanaged** (customizable; demo/POC + SE customization)
-- `release/v1.2.2.0/ServiceToolkit_Managed_1_2_2_0.zip` — **managed** (clean uninstall; customer/production + gallery installs)
+- **[Releases](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)** — install zips live here (Experience Studio reads `releases/latest`):
+  - `ServiceToolkit_Managed_1_2_2_0.zip` — **managed** (clean uninstall; customer/production + gallery installs)
+  - `ServiceToolkitGeneric_1_2_2_0.zip` — **unmanaged** (customizable; demo/POC + SE customization)
 - `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.pdf`
 - `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.docx`
 
