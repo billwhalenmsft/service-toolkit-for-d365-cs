@@ -1,21 +1,30 @@
 # Service Toolkit for D365 Customer Service
 
-## Customer Release Hub (v1.2.2.0)
+Custom entities and web resources that extend the **Dynamics 365 Customer Service Workspace** with manufacturing service management — warranty claims, RMA / credit memos, parts, product serials, and customer orders — surfaced in the agent **productivity pane**.
 
-Use the customer-facing engagement page for downloads and install guidance:
+<p align="center">
+  <img src="docs/screenshot.png" alt="Service Toolkit — CSR Productivity Tools pane in Dynamics 365 Customer Service" width="360">
+</p>
 
-- `index.html` (GitHub Pages landing page)
-- **[Releases](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)** — install zips live here (Experience Studio reads `releases/latest`):
-  - `ServiceToolkit_Managed_1_2_2_0.zip` — **managed** (clean uninstall; customer/production + gallery installs)
-  - `ServiceToolkitGeneric_1_2_2_0.zip` — **unmanaged** (customizable; demo/POC + SE customization)
-- `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.pdf`
-- `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.docx`
+> **Latest release: [v1.2.2.0](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)** &nbsp;·&nbsp; [Engagement hub & docs →](https://billwhalenmsft.github.io/service-toolkit-for-d365-cs/)
 
-Both builds are FS-free / Marketing-free, pass Solution Checker (Critical 0 / High 0), and StageSolution-verify to zero Field Service / Email dependencies (prereqs: Customer Service, Sales, Product Management).
+## Download
 
-Recommended publish URL after push:
+Install files are published as **[GitHub Release assets](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)** — pick the build for your scenario:
 
-- `https://billwhalenmsft.github.io/service-toolkit-for-d365-cs/`
+| Build | File | Use when |
+|---|---|---|
+| **Managed** | `ServiceToolkit_Managed_1_2_2_0.zip` | Customer / production installs · clean uninstall · one-click gallery deploys |
+| **Unmanaged** | `ServiceToolkitGeneric_1_2_2_0.zip` | Demo / POC envs · SE customization (components stay editable) |
+
+Release notes: [PDF](release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.pdf) · [Word](release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.docx)
+
+## What's new in v1.2.2.0
+
+- **Canvas app opens in Power Apps Studio** — fixed the prior `ErrOpeningDocument` (the app is now Studio-authored and fully editable).
+- **Field Service & Marketing dependencies removed** — imports cleanly into FS-free / Marketing-free **managed environments**. Prerequisites are only **Customer Service, Sales, and Product Management**.
+- **ShipEngine removed**; the home screen adds a **“+ Add your use case here”** extensibility card.
+- **Two builds — managed + unmanaged** — each verified: **Solution Checker Critical 0 / High 0**, and **StageSolution = zero Field Service / Email dependencies**.
 
 Custom entities and web resources that extend the Dynamics 365 Customer Service Workspace with manufacturing-specific service management capabilities.
 
@@ -73,6 +82,12 @@ Adds manufacturing and service-specific entities to D365 Customer Service, enabl
 | **Service Toolkit Loader** | `bw_ServiceToolkitLoader` | HTML sideloader for the CS Workspace productivity pane — renders custom panels (orders, warranty status, RMA tracking) alongside the case form |
 | **BI RMA Dashboard** | `cra1f_bi_rma` | RMA analytics and reporting dashboard |
 
+### Canvas App
+
+| App | Description |
+|-----|-------------|
+| **Service Toolkit Pages** — *CSR Productivity Tools* | The agent-facing canvas app shown above: Order Management, Quick Quote, Return / RMA, and Equipment & Warranty, plus a **“+ Add your use case here”** extensibility card. Studio-authored — opens for editing in Power Apps Studio. |
+
 ### Calculated Fields / Business Rules
 
 | Field | Table | Description |
@@ -93,11 +108,11 @@ Adds manufacturing and service-specific entities to D365 Customer Service, enabl
 
 ### NOT Required
 
-- Field Service — NOT needed (Canvas App removed from clean version)
-- Marketing — NOT needed
-- Asset Common — NOT needed in clean version
-- Power BI — NOT needed
-- Azure resources — NOT needed
+- **Field Service** — not needed (all FS dependencies removed in v1.2.2.0; the canvas app ships and opens in Studio)
+- **Marketing / Customer Insights – Journeys** — not needed
+- **Asset Common** — not needed
+- **Power BI** — not needed
+- **Azure resources** — not needed
 
 ### Permissions
 
@@ -113,21 +128,25 @@ End users need:
 
 ## Installation
 
-### Step 1: Choose Your Solution Version
+### Step 1: Download the solution
 
-| File | Size | Dependencies | Use When |
-|------|------|-------------|----------|
-| `ServiceToolkit_1_0_0_0_clean.zip` | 116 KB | Service + Product Management only | **Recommended** — for customer delivery, POC environments, any env without Field Service |
-| `ServiceToolkit_1_0_0_0.zip` | 4.3 MB | 8 managed solutions | Full version with Canvas App — only if target has Field Service + Marketing installed |
+Get the build for your scenario from **[Releases](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)**:
+
+| Build | File | Use when |
+|---|---|---|
+| **Managed** (recommended for customers) | `ServiceToolkit_Managed_1_2_2_0.zip` | Production / customer installs; clean uninstall |
+| **Unmanaged** | `ServiceToolkitGeneric_1_2_2_0.zip` | Demo / POC; you want to customize components |
+
+Both require **Customer Service, Sales, and Product Management** (no Field Service, no Marketing).
 
 ### Step 2: Import
 
-#### Option A: Power Apps Portal
+#### Option A: Power Apps maker portal
 
-1. Download your chosen ZIP from the `solution/` folder in this repo
-2. Go to [make.powerapps.com](https://make.powerapps.com) then Solutions then Import
-3. Upload the ZIP then click Next then Import
-4. Wait for import to complete (1-2 minutes for the clean version)
+1. Download your chosen ZIP from [Releases](https://github.com/billwhalenmsft/service-toolkit-for-d365-cs/releases/latest)
+2. Go to [make.powerapps.com](https://make.powerapps.com) → **Solutions** → **Import solution**
+3. Upload the ZIP → **Next** → **Import**
+4. When the import finishes, **publish all customizations** if prompted
 
 #### Option B: PAC CLI
 
@@ -135,8 +154,8 @@ End users need:
 # Authenticate
 pac auth create --url https://your-org.crm.dynamics.com
 
-# Import the clean version (recommended)
-pac solution import --path solution/ServiceToolkit_1_0_0_0_clean.zip --publish-changes
+# Import the managed build (recommended for customers)
+pac solution import --path ServiceToolkit_Managed_1_2_2_0.zip --publish-changes
 ```
 
 ### Step 3: Configure the Service Toolkit in CS Workspace
@@ -166,13 +185,18 @@ pac solution import --path solution/ServiceToolkit_1_0_0_0_clean.zip --publish-c
 ```
 service-toolkit-for-d365-cs/
   README.md
+  index.html                          <- Engagement hub (served via GitHub Pages)
+  docs/
+    screenshot.png                    <- App screenshot (this README)
   src/
     bw_ServiceToolkitLoader.html      <- Service Toolkit sideloader source
     cra1f_bi_rma.html                 <- RMA analytics dashboard source
-  solution/
-    README.md
-    ServiceToolkit_1_0_0_0_clean.zip  <- Clean solution (116KB, recommended)
-    ServiceToolkit_1_0_0_0.zip        <- Full solution (4.3MB, needs Field Service)
+  release/v1.2.2.0/
+    ServiceToolkit_v1.2.2.0_Release_Notes.pdf
+    ServiceToolkit_v1.2.2.0_Release_Notes.docx
+
+# Install zips (managed + unmanaged) are published as GitHub Release assets
+# — see the Releases tab, not the repo tree.
 ```
 
 ---
