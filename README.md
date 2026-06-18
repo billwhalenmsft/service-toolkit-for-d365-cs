@@ -5,9 +5,12 @@
 Use the customer-facing engagement page for downloads and install guidance:
 
 - `index.html` (GitHub Pages landing page)
-- `release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip`
+- `release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip` — **unmanaged** (customizable; demo/POC + SE customization)
+- `release/v1.2.2.0/ServiceToolkit_Managed_1_2_2_0.zip` — **managed** (clean uninstall; customer/production + gallery installs)
 - `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.pdf`
 - `release/v1.2.2.0/ServiceToolkit_v1.2.2.0_Release_Notes.docx`
+
+Both builds are FS-free / Marketing-free, pass Solution Checker (Critical 0 / High 0), and StageSolution-verify to zero Field Service / Email dependencies (prereqs: Customer Service, Sales, Product Management).
 
 Recommended publish URL after push:
 

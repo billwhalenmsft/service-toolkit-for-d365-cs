@@ -87,11 +87,20 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
         <article class="card">
           <div class="top">ZIP</div>
           <div class="body">
-            <div class="kind">Package</div>
+            <div class="kind">Package · Unmanaged</div>
             <div class="name">ServiceToolkitGeneric_1_2_2_0.zip</div>
-            <div class="desc">Primary import artifact for customer environments with Customer Service, Sales, and Product Management.</div>
+            <div class="desc">Customizable build — components stay editable after import. Best for demo/POC orgs and SE customization. Prereqs: Customer Service, Sales, Product Management.</div>
           </div>
-          <div class="foot"><a class="btn btn-primary" href="release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip">Download package</a></div>
+          <div class="foot"><a class="btn btn-primary" href="release/v1.2.2.0/ServiceToolkitGeneric_1_2_2_0.zip">Download unmanaged</a></div>
+        </article>
+        <article class="card">
+          <div class="top">ZIP</div>
+          <div class="body">
+            <div class="kind">Package · Managed</div>
+            <div class="name">ServiceToolkit_Managed_1_2_2_0.zip</div>
+            <div class="desc">Locked build — clean uninstall, no customization-layer pollution. Best for customer/production installs and one-click gallery deploys. Same prereqs.</div>
+          </div>
+          <div class="foot"><a class="btn btn-primary" href="release/v1.2.2.0/ServiceToolkit_Managed_1_2_2_0.zip">Download managed</a></div>
         </article>
         <article class="card">
           <div class="top">PDF</div>
@@ -132,7 +141,7 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
         <ol class="steps">
           <li>Go to <span class="code">make.powerapps.com</span> and open the target environment.</li>
           <li>Open <span class="code">Solutions</span>, then choose <span class="code">Import solution</span>.</li>
-          <li>Upload <span class="code">ServiceToolkitGeneric_1_2_2_0.zip</span> from this page.</li>
+          <li>Upload the <span class="code">managed</span> (production) or <span class="code">unmanaged</span> (customizable) zip from this page.</li>
           <li>Complete import and publish changes when prompted.</li>
           <li>Open the Service Toolkit app once in Studio to confirm edit-mode load.</li>
         </ol>
